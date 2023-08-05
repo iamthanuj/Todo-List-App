@@ -30,15 +30,15 @@
             </ul>
         </div>
     </main>
-    <div class="edit-layer">
+    <div class="edit-layer js-edit-layer">
         <div class="add-todo edit-todo">
-            <input type="text" placeholder="Edit task" class="text js-todo-text">
-            <input type="date" class="date js-date">
-            <button class="add-btn js-add-btn">Done</button>
+            <input type="text" placeholder="Edit task" class="text js-edit-text">
+            <input type="date" class="date js-edit-date">
+            <button class="add-btn js-save-btn">Save</button>
+            <button type="button" id="close-edit-btn" class="close-btn">
+                <img src="close.png" alt="" class="close-btn-png">
+            </button>
         </div>
-        <button type="button" id="close-edit-btn" class="close-btn">
-            <img src="close.png" alt="" class="close-btn-png">
-        </button>
     </div>
     <script src="script.js"></script>
 </body>

@@ -2,6 +2,8 @@ let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
 
 const todoText = document.querySelector(".js-todo-text");
 const todoDate = document.querySelector(".js-date");
+const closeBtn = document.querySelector(".close-btn");
+const editLayer = document.querySelector(".js-edit-layer");
 
 renderTodo();
 document.querySelector(".js-add-btn").addEventListener("click", () => {
@@ -28,6 +30,13 @@ function renderTodo() {
   });
 
   document.querySelector(".js-todo-li-list").innerHTML = listHTML;
+
+  document.querySelectorAll(".edit-btn").forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      editLayer.style.visibility = "visible";
+      editTodo(index);
+    });
+  });
 }
 
 function removeTodo(index) {
@@ -37,10 +46,25 @@ function removeTodo(index) {
 }
 
 function editTodo(index) {
-  todoList;
-  saveLocal();
+  const todo = todoList[index];
+  const editText = document.querySelector(".js-edit-text");
+  const editDate = document.querySelector(".js-edit-date");
+  editText.value = todo.todoName;
+  editDate.value = todo.todoDate;
+
+  document.querySelector(".js-save-btn").addEventListener("click", () => {
+    todo.todoName = editText.value;
+    todo.todoDate = editDate.value;
+    editLayer.style.visibility = "hidden";
+    renderTodo();
+    saveLocal();
+  });
 }
 
 function saveLocal() {
   localStorage.setItem("todoList", JSON.stringify(todoList));
 }
+
+closeBtn.addEventListener("click", () => {
+  editLayer.style.visibility = "hidden";
+});

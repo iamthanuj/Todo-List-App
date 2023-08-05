@@ -36,7 +36,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 4;
 }
 
 header h1 {
@@ -70,14 +70,12 @@ main {
   padding: 24px;
 }
 
-
 .text {
   font-size: 18px;
   padding: 11px 10px;
   outline: none;
   border: 2px solid rgb(91, 175, 243);
   border-radius: 5px;
-  transition: all 0.5s;
 }
 
 .text:focus {
@@ -116,11 +114,10 @@ main {
   box-shadow: 0px 0px 5px rgba(91, 175, 243, 0.822);
 }
 
-.add-btn:active{
+.add-btn:active {
   background-color: rgb(0, 139, 253);
   box-shadow: 0px 0px 0px rgba(91, 175, 243, 0.822);
 }
-
 
 .todo-list {
   width: 600px;
@@ -143,7 +140,7 @@ main {
   align-items: center;
   padding: 10px;
   font-size: 18px;
-  background-color:rgba(91, 175, 243, 0.116);
+  background-color: rgba(91, 175, 243, 0.116);
   border-radius: 5px;
   color: rgb(0, 140, 255);
 }
@@ -154,8 +151,7 @@ main {
   gap: 10px;
 }
 
-
-.edit-btn{
+.edit-btn {
   background-color: rgb(69, 205, 214);
   color: white;
   border: none;
@@ -166,7 +162,7 @@ main {
   transition: all 250ms;
 }
 
-.remove-btn{
+.remove-btn {
   background-color: rgb(10, 161, 248);
   color: white;
   border: none;
@@ -177,12 +173,13 @@ main {
   transition: all 250ms;
 }
 
-.edit-btn:active,.remove-btn:active {
+.edit-btn:active,
+.remove-btn:active {
   background-color: rgb(0, 139, 253);
   box-shadow: 0px 0px 0px rgba(91, 175, 243, 0.822);
 }
 
-.edit-layer{
+.edit-layer {
   position: absolute;
   background-color: rgba(16, 55, 90, 0.541);
   top: 0;
@@ -194,35 +191,39 @@ main {
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  height:auto;
 }
 
-
-.edit-todo{
+.edit-todo {
   margin: 0;
   position: absolute;
   z-index: 2;
 }
 
-.close-btn{
+.close-btn {
   position: absolute;
   z-index: 3;
   background-color: transparent;
   border: none;
-  top: 0;
-
+  top: 3px;
+  right: 3px;
+  cursor: pointer;
 }
 
-.close-btn-png{
+.close-btn-png {
   width: 20px;
 }
 
+.js-save-btn {
+  transition: none;
+}
 
-@media(max-width:630px){
+@media (max-width: 630px) {
   header h1 {
     font-size: 35px;
   }
 
-  main{
+  main {
     align-items: center;
   }
   .add-todo {
@@ -239,7 +240,7 @@ main {
     align-items: center;
     overflow: hidden;
   }
-  .todo-list{
+  .todo-list {
     width: 80%;
   }
 }
