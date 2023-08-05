@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #f4faff;
+  position: relative;
+  height: 100vh;
+  padding-top: 100px;
+}
+
+header {
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 50px;
+  color: white;
+}
+
+.dot {
+  color: yellow;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.add-todo {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 100px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(91, 175, 243, 0.288);
+  padding: 24px;
+}
+
+
+.text {
+  font-size: 18px;
+  padding: 11px 10px;
+  outline: none;
+  border: 2px solid rgb(91, 175, 243);
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.text:focus {
+  border-color: rgb(0, 140, 255);
+}
+
+.date {
+  background-color: rgb(91, 175, 243);
+  font-family: "Epilogue", sans-serif;
+  font-family: "Roboto", sans-serif;
+  padding: 9px 12px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+::-webkit-calendar-picker-indicator {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn {
+  font-size: 18px;
+  border: none;
+  background-color: rgb(91, 175, 243);
+  color: white;
+  padding: 12px 11px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 250ms;
+  box-shadow: 0px 0px 5px rgba(91, 175, 243, 0.822);
+}
+
+.add-btn:active{
+  background-color: rgb(0, 139, 253);
+  box-shadow: 0px 0px 0px rgba(91, 175, 243, 0.822);
+}
+
+
+.todo-list {
+  width: 600px;
+  background-color: white;
+  padding: 24px;
+  box-shadow: 0px 0px 20px rgba(91, 175, 243, 0.288);
+  border-radius: 10px;
+}
+
+.todo-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-item {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+  background-color:rgba(91, 175, 243, 0.116);
+  border-radius: 5px;
+  color: rgb(0, 140, 255);
+}
+
+.todo-item-right-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.edit-btn{
+  background-color: rgb(69, 205, 214);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(91, 175, 243, 0.822);
+  transition: all 250ms;
+}
+
+.remove-btn{
+  background-color: rgb(10, 161, 248);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(91, 175, 243, 0.822);
+  transition: all 250ms;
+}
+
+.edit-btn:active,.remove-btn:active {
+  background-color: rgb(0, 139, 253);
+  box-shadow: 0px 0px 0px rgba(91, 175, 243, 0.822);
+}
+
+.edit-layer{
+  position: absolute;
+  background-color: rgba(16, 55, 90, 0.541);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+
+.edit-todo{
+  margin: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.close-btn{
+  position: absolute;
+  z-index: 3;
+  background-color: transparent;
+  border: none;
+  top: 0;
+
+}
+
+.close-btn-png{
+  width: 20px;
+}
+
+
+@media(max-width:630px){
+  header h1 {
+    font-size: 35px;
+  }
+
+  main{
+    align-items: center;
+  }
+  .add-todo {
+    width: 291;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .todo-item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+  }
+  .todo-list{
+    width: 80%;
+  }
+}

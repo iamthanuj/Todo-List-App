@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo-App</title>
+</head>
+
+<body>
+    <header>
+        <h1>TODO LIST<span class="dot">.</span></h1>
+    </header>
+    <main>
+        <div class="add-todo">
+            <input type="text" placeholder="Enter task" class="text js-todo-text">
+            <input type="date" class="date js-date" alt="Date">
+            <button class="add-btn js-add-btn">Add Todo</button>
+        </div>
+        <div class="todo-list">
+            <ul class="js-todo-li-list">
+                <!-- <li class="todo-item">Hello World! <span class="todo-item-right-side"><button
+                            class="edit-btn">Edit</button> <button class="remove-btn">Remove</button></span></li> -->
+            </ul>
+        </div>
+    </main>
+    <div class="edit-layer">
+        <div class="add-todo edit-todo">
+            <input type="text" placeholder="Edit task" class="text js-todo-text">
+            <input type="date" class="date js-date">
+            <button class="add-btn js-add-btn">Done</button>
+        </div>
+        <button type="button" id="close-edit-btn" class="close-btn">
+            <img src="close.png" alt="" class="close-btn-png">
+        </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
