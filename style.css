@@ -218,6 +218,36 @@ main {
   transition: none;
 }
 
+
+footer{
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  );
+  color: white;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.developer{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: all 500ms;
+}
+
+.developer:hover{
+  color: rgb(167, 213, 250);
+}
+
 @media (max-width: 630px) {
   header h1 {
     font-size: 35px;
@@ -242,5 +272,9 @@ main {
   }
   .todo-list {
     width: 80%;
+  }
+
+  .footer{
+    font-size: 14px;
   }
 }
